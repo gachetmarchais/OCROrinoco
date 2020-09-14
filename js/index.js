@@ -4,25 +4,27 @@ async function ajaxGet(){
     let response = await fetch(url); //stock resultat de la méthode fetch (tj paramètre url)
 
     if (response.ok) { // if HTTP-status is 200-299
-    // get the response body (the method explained below)
-    let json = await response.json();
-    return json;
+        // get the response body (the method explained below)
+        let json = await response.json();
+        return json;
     } else {
     alert("HTTP-Error: " + response.status);
     }
 };
-ajaxGet().then(function(teddies){ // faire le retour de name et img dans liste
-    console.log (teddies);
+
+ajaxGet().then(teddies => { // faire le retour de name et img dans liste
+    console.log (teddies);    
     const $listTeddies = document.querySelector('#list-teddies');
-    teddies.forEach(teddies => {
+    
+    teddies.forEach(teddy => {
         $listTeddies.innerHTML += `
         <li class="teddy-product" id="${teddy._id}">
-            <img src="${teddy.imageUrl}">
+            <a href="html/product-details.html?id=${teddy._id}"><img src="${teddy.imageUrl}"></a>
             <h3>${teddy.name}</h3>
         `;
-    })
+    });
 });
-teddy.send();
+
 
    
 
