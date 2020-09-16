@@ -33,9 +33,9 @@ ajaxGet().then( teddy => {
 
     // remplir les champs html par les infos du teddy
         image.innerHTML = `<img id="teddy-image" src="${teddy.imageUrl}" alt="Photo de ${teddy.name}" >`;
-        name.innerHTML = teddy.name;
+        name.innerHTML = teddy.name + ' ' + ':';
         description.innerHTML = teddy.description;
-        price.innerHTML = teddy.price;
+        price.innerHTML = teddy.price/100 + ' ' + 'Eur';
 
    // ajouter les différents choix de couleurs -- A FAIRE 
         

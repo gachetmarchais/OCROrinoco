@@ -6,17 +6,29 @@
     <title>Détails produit</title>
     <link rel="stylesheet" href="../css/product-details.css">
 </head>
-<body>  
-    <main id='main-ctnr'>
+<body id="body">  
+    <header  id="header" >
+        <img  id="logo" src = " ../images/logo.png " alt = "logo Orinoco" />
+        <h1> Orinoco </h1 >
+    </header >
+
+    <main id="main">
+        <h2 > Descriptif de l'article </h2 >  
         <section id="teddy-details">
-            <p id="teddy-image"> <!--à remplir-->
-            <h3 id="teddy-name"></h3>  <!--à remplir-->
-            <p id="teddy-description"></p>  <!--à remplir-->
-            <p id="teddy-price"></p>
+            <p id="teddy-image"> 
+            <div id="name-price">
+                <h3 id="teddy-name"></h3> 
+                <p id="teddy-price"></p> 
+            </div>
+            <p id="teddy-description"></p>  
+            
             <!--bouton de choix des couleurs-->
             <select id="teddy-color" class="liste"></select>           
             <!--choix des quantités-->
-            <p id="teddy-quantity"></p>
+            <div id="choice-quantity">
+                <p>Quantité:</p>
+                <select id="teddy-quantity" class="liste"></select>
+            </div>
             <!--bouton valider = rajoute au panier-->
             <button type="button" id="add-basket" class="btn btn-success">Ajouter au panier</button>
         </section>

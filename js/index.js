@@ -19,8 +19,10 @@ ajaxGet().then(teddies => { // faire le retour de name et img dans liste
     teddies.forEach(teddy => {
         $listTeddies.innerHTML += `
         <li class="teddy-product" id="${teddy._id}">
-            <a href="html/product-details.html?id=${teddy._id}"><img src="${teddy.imageUrl}"></a>
-            <h3>${teddy.name}</h3>
+            <a href="html/product-details.html?id=${teddy._id}"><img src="${teddy.imageUrl}" id="teddy-image"></a>
+            <div id="teddy-name">
+                <h3>${teddy.name}</h3>
+            </div>
         `;
     });
 });
