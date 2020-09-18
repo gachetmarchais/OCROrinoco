@@ -23,7 +23,7 @@ const image = document.getElementById('teddy-image');
 const name = document.getElementById('teddy-name');
 const description = document.getElementById('teddy-description');
 const price = document.getElementById('teddy-price');
-const selectColors = document.getElementById('teddy-color');
+
 const quantity = document.getElementById('teddy-quantity');
 const addBasket = document.getElementById('add-basket');
 
@@ -33,24 +33,36 @@ ajaxGet().then( teddy => {
 
     // remplir les champs html par les infos du teddy
         image.innerHTML = `<img id="teddy-image" src="${teddy.imageUrl}" alt="Photo de ${teddy.name}" >`;
-        name.innerHTML = teddy.name + ' ' + ':';
+        name.innerHTML = teddy.name;
         description.innerHTML = teddy.description;
         price.innerHTML = teddy.price/100 + ' ' + 'Eur';
 
    // ajouter les différents choix de couleurs -- A FAIRE 
-        
+        /*
         ajaxGet().then(colors => {           
             colors.forEach (color => {
                 $selectColors.innerHTML += `
                 '<option id="color-option">' + ${colors[i]} + '</option>';`
             });
             console.log(selectColors);          
-            /*
+            
            for (i = 0; i < colors.length; i++) {
                 $selectColors.innerHTML += 
                 '<option id="colors-options">' + colors[i] + '</option>';
-            }; */
-        });
+            }; 
+        });  */
+
+        function createColorsOptions(){
+            let c = new Color();
+            let yourOptions = "<option value='0'>select</option>";
+
+            for (let i = colors; i < colors.lenght; i++) {
+                yourOptions += 
+                "<option value='+i+'>Choix de la couleur</option>";
+            }
+            console.log(yourOptions);
+            document.getElementById ('teddy-color') = yourOptions;
+        }
         
 
     // ajouter les quantités -- A FAIRE 

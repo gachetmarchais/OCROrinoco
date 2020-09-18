@@ -36,18 +36,18 @@ h2{
     padding: 0;
     display: flex;
     flex-direction: column;
+    box-shadow: 6px 6px 10px #737485;
+
 }
 #teddy-image{
     max-width: 280px;
     margin: 1rem 1rem 1rem 1rem;
 }
-#teddy-name{
-   
-    text-align: center;
-    
+#teddy-name{   
+    text-align: center;   
     
 }
-#teddy-quantity, #teddy-color{
+ #teddy-color, {
     display: flex;
     flex-wrap: wrap;
 }
@@ -56,29 +56,25 @@ h2{
     color: white;
     width:100%;
     font-size: 18px;
+    display: flex;
     justify-content: space-around;
     align-items: center;
     font-weight: bolder;
 }
-#choice-quantity, #name-price{
-    display: flex;
-    width:100%;
-}
 
-#choice-quantity, #teddy-color,#name-price, #add-basket{
+
+
+#teddy-color,#name-price,#teddy-quantity, #add-basket{
     margin: 0 0 2rem 0;
 }
-#teddy-quantity{
-    margin: 0 0 0 1rem;
-    min-width: 50%;
-    height: 100%;
-    
-}
-#teddy-color{
+
+#teddy-color, #teddy-quantity{
     min-width:50%;
 }
 #add-basket{
     max-width: 50%;
+    background-color: #737485;
+    color: white;
 }
 
 
