@@ -23,13 +23,11 @@ const image = document.getElementById('teddy-image');
 const name = document.getElementById('teddy-name');
 const description = document.getElementById('teddy-description');
 const price = document.getElementById('teddy-price');
+const selectColors = document.getElementById('teddy-color');
 
-const quantity = document.getElementById('teddy-quantity');
-const addBasket = document.getElementById('add-basket');
 
-// récupérer le teddy du server
-ajaxGet().then( teddy => {
-    console.log(teddy);
+// récupérer le teddy du server -- A FAIRE 
+
 
     // remplir les champs html par les infos du teddy
         image.innerHTML = `<img id="teddy-image" src="${teddy.imageUrl}" alt="Photo de ${teddy.name}" >`;
@@ -37,50 +35,38 @@ ajaxGet().then( teddy => {
         description.innerHTML = teddy.description;
         price.innerHTML = teddy.price/100 + ' ' + 'Eur';
 
-   // ajouter les différents choix de couleurs -- A FAIRE 
-        /*
-        ajaxGet().then(colors => {           
-            colors.forEach (color => {
-                $selectColors.innerHTML += `
-                '<option id="color-option">' + ${colors[i]} + '</option>';`
-            });
-            console.log(selectColors);          
-            
-           for (i = 0; i < colors.length; i++) {
-                $selectColors.innerHTML += 
-                '<option id="colors-options">' + colors[i] + '</option>';
-            }; 
-        });  */
-
-        function createColorsOptions(){
-            let c = new Color();
-            let yourOptions = "<option value='0'>select</option>";
-
-            for (let i = colors; i < colors.lenght; i++) {
-                yourOptions += 
-                "<option value='+i+'>Choix de la couleur</option>";
-            }
-            console.log(yourOptions);
-            document.getElementById ('teddy-color') = yourOptions;
-        }
+   // ajouter les différents choix de couleurs 
         
-
-    // ajouter les quantités -- A FAIRE 
-        
+        teddy.colors.forEach(color =>{
+            selectColors.innerHtml += 'option value =$(color)>$(color)</option>';
+        });
 
 
     // activer le bouton d'ajout au panier -- PAS FINI
-        addBasket.addEventListener('click', function(event){
-            event.preventDefault();
+       document.querySelector('form').addEventListener('submit', function(e){
+            e.preventDefault();
             let element = {};
-            element.id = teddy_id;
-            element.name = teddy.name;
-            element.price = teddy.price;
-            element.quantity = teddy.quantity;
+            element._id         = teddy_id;
+            element.name        = teddy.name;
+            element.price       = teddy.price;
+            element.quantity    = teddy.quantity;
+            element.imageUrl    =teddy.imageUrl;
 
-            let basket = [];
+            let basket = JSON.parse(window.localStorage.getItem('orinoco_ocr_natacha_P5'));
+            /*
+            if() {
+                basket.push(element);
+            }
+            */
+            window.localStorage.setItem(('orinoco_ocr_natacha_P5'));
+        });   
+ 
 
-        });
-   
-});
-
+// ajouter les quantités
+function implementQuantitySelect(){
+    const $select = document.querySelector('#teddy-quantity');
+    for (let i = 1; i <= 50; i++) {
+        $select.innerHTML += 'option value=$(i)>$(i)</option>';
+    }
+}
+implementQuantitySelect();

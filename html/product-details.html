@@ -8,8 +8,10 @@
 </head>
 <body id="body">  
     <header  id="header" >
-        <img  id="logo" src = " ../images/logo.png " alt = "logo Orinoco" />
-        <h1> Orinoco </h1 >
+        <a href="../index.html">
+            <img  id="logo" src = " ../images/logo.png " alt = "logo Orinoco" />
+            <h1> Orinoco </h1 >
+        </a>
     </header >
 
     <main id="main">
@@ -20,12 +22,12 @@
                 <h3 id="teddy-name"></h3> 
                 <p id="teddy-price"></p> 
             </div>
-            <p id="teddy-description"></p>  
-            
-            <!--bouton de choix des couleurs-->
-            <select id="teddy-color" class="liste"></select>           
-            <!--choix des quantités-->           
-            <select id="teddy-quantity" class="liste"></select>      
+            <p id="teddy-description"></p>              
+            <!-- Formulaire choix des couleurs et quantités-->
+            <div id="form">
+                <select id="teddy-color" class="liste"></select>      
+                <select id="teddy-quantity" class="liste"></select>      
+            </div>
             <!--bouton valider = rajoute au panier-->
             <button type="button" id="add-basket" class="btn btn-success ">Ajouter au panier</button>
         </section>

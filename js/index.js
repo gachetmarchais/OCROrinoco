@@ -28,18 +28,15 @@ ajaxGet().then(teddies => { // faire le retour de name et img dans liste
 });
 
 
-   
+ // initialiser le basket
+ 
+ if(!){
 
-    /*
-    < li  class = " media text-white bg-secondaire arrondi-droit arrondi-bordure gauche frontière-secondaire mb-3 pr-3 " id = " 5beaaa8f1c9d440000a57d95 " >
-    < img  class = " mr-3 " src = " images / teddy_3.jpg " alt = " Teddie Lenny et Carl " >
-    < div  class = " media-body align-self-center " >
-        < h3  class = " mt-0 " > Lenny et Carl </ h3 >
-        < p  class = " mb-0 " > Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </ p >
-    </ div >
-    < div  class = " ml-3 align-self-center " >
-        < div  class = " btn btn-primary " > Voir le produit </ div >
-    </ div >*/
+ }
+ 
+ 
+
+   
 
 
 
