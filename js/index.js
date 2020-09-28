@@ -28,13 +28,14 @@ ajaxGet().then(teddies => { // faire le retour de name et img dans liste
 });
 
 
- // initialiser le basket
- 
- if(!){
+ // initialiser le basket 
+ let storage = window.localStorage.getItem('orinoco_ocr_natacha_P5');
 
- }
- 
- 
+if(storage) {
+    console.log('Youpi, le storage existe déjà !!');
+} else {
+    window.localStorage.setItem('orinoco_ocr_natacha_P5', JSON.stringify([]));
+}
 
    
 
