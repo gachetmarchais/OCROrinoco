@@ -54,23 +54,25 @@ ajaxGet().then(teddy => {
             element._id         = teddy._id;
             element.name        = teddy.name;
             element.price       = teddy.price;
-            element.quantity    = teddy.quantity;
+            element.quantity    = document.querySelector('#teddy-quantity').value;
             element.imageUrl    = teddy.imageUrl;
 
             let basket = JSON.parse(window.localStorage.getItem('orinoco_ocr_natacha_P5'));
             
             // à revoir 
-            if(!element.quantity.value) {
-                erreur = "Veuillez renseigner la quantité souhaitée";                
+            if(!element.quantity) {
+                alert("Veuillez renseigner la quantité souhaitée");               
             } else{
                 basket.push(element);
+
+                window.localStorage.setItem('orinoco_ocr_natacha_P5', JSON.stringify(basket));
+                alert ('Article ajouté au panier');
             }
 
-            window.localStorage.setItem('orinoco_ocr_natacha_P5', JSON.stringify(basket));
-            alert ('Article ajouté au panier');
         });
    
 });
+
 
  // ajouter les quantités
 function implementQuantitySelect() {

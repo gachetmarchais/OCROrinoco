@@ -6,27 +6,39 @@ basket.forEach(product => {
     console.log(product);
     $listTeddies.innerHTML += `
     <li class="teddy-product" id="${product._id}">
-       <span>${element.imageUrl}</span>
-       <span>${element.name}</span>
-       <span>${element.price/100}.00€</span>
-       <span>${element.quantity }</span> 
-       <span>${element.price/100*element.quantity},00€</span>
+       <img src="${product.imageUrl}"/>
+       <span>${product.name}</span>
+       <span>${product.price/100}.00€</span>
+       <span>${product.quantity }</span> 
+       <span>${product.price/100*product.quantity},00€</span>
     `;
 });
 
 // Prix total du panier -- A FAIRE 
 function totalCount() {
-    for (let i in basket) {
-        total += basket[i].price * basket[i].quantity;
-    }
+    let total = 0;
+    basket.forEach(product => {
+        total += product.price * product.quantity;
+    })
+       
     console.log(total);
-
-    totalBasket = total / 100 + ',00 €';
+    const totalBasket = document.querySelector('#total-amount');
+    totalBasket.innerText = total / 100 + ' €';
 }
 
-updateQuantity();
+// updateQuantity();
 totalCount();
 
+
+
+document.querySelector('form').addEventListener('submit', () => {
+   const firstName = document.querySelector('#firstname').value;
+   const lastName = document.querySelector('#lastname').value;
+   const city = document.querySelector('#city').value;
+   const address = document.querySelector('#address').value;
+   const email = document.querySelector('#email').value;   
+
+});
 
 // Formulaire
 function form() {

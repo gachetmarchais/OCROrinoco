@@ -29,3 +29,7 @@ h2{
     color: #737485;   
     font-size: 30px;
 }
+
+li img {
+    width: 80px;
+}
